@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -37,7 +38,7 @@ public class Login extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emailpassword);
+        setContentView(R.layout.activity_login);
 
         // Views
         mStatusTextView = findViewById(R.id.status);
@@ -56,7 +57,7 @@ public class Login extends AppCompatActivity implements
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
     }
-    @VisibleForTesting
+     @VisibleForTesting
     public ProgressDialog mProgressDialog;
 
     public void showProgressDialog() {
